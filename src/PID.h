@@ -1,6 +1,6 @@
 #ifndef PID_H
 #define PID_H
-
+#include <math.h>       /* pow */
 class PID {
  public:
   /**
@@ -23,7 +23,7 @@ class PID {
    * Update the PID error variables given cross track error.
    * @param cte The current cross track error
    */
-  void UpdateError(double cte);
+  double UpdateSteering(double cte, double cte_prev);
 
   /**
    * Calculate the total PID error.
@@ -38,6 +38,7 @@ class PID {
   double p_error;
   double i_error;
   double d_error;
+  double total_error;
 
   /**
    * PID Coefficients
@@ -45,6 +46,7 @@ class PID {
   double Kp;
   double Ki;
   double Kd;
+
 };
 
 #endif  // PID_H
