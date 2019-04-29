@@ -42,7 +42,7 @@ int main()
    * TODO: Initialize the pid variable.
    */
   //pid.Init(0.13,0.0075,8.0); throttle = 0.3
-  pid.Init(0.12,0.004,12.0);
+  pid.Init(0.13,0.005,10.0);
 
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
