@@ -30,7 +30,6 @@ double PID::UpdateSteering(double cte, double cte_prev) {
   i_error += p_error;
   
   double steering = Kp*(p_error + Ki*i_error + Kd*d_error);
-  TotalError();
   return steering;
 
 
